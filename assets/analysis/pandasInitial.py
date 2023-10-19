@@ -1,106 +1,10 @@
 import pandas as pd
 import random
-from funcionCrearDatos import sumarArboles
+from funcionCrearDatos import createDataframe
+from funcionCrearDatos import generateData
+import matplotlib.pyplot as plt
 #Analyze a list of data
 cities = ['Medellín', 'Bogotá', 'Cali', 'Barranquilla', 'Santa Marta', 'Montería', 'Ciénaga', 'Valledupar', 'Sincelejo', 'Manizales']
-
-# List of municipalities in Antioquia
-municipalities = ['Carepa',
-'Carmen De Viboral',
-'Carolina',
-'Caucasia',
-'Chigorodó',
-'Cisneros',
-'Cocorná',
-'Concepción',
-'Concordia',
-'Copacabana',
-'Dabeiba',
-'Don Matías',
-'Ebejico',
-'El Bagre',
-'Entrerrios',
-'Envigado',
-'Fredonia',
-'Frontino',
-'Giraldo',
-'Girardota',
-'Gómez Plata',
-'Granada',
-'Guadalupe'
-'Guarne',
-'Guatapé',
-'Heliconia',
-'Hispania',
-'Itagui',
-'Ituango',
-'Jardín',
-'Jericó',
-'La Ceja',
-'La Estrella',
-'La Pintada',
-'La Unión',
-'Liborina',
-'Maceo',
-'Marinilla',
-'Montebello',
-'Murindó',
-'Mutatá',
-'Nariño',
-'Nechí',
-'Necoclí',
-'Olaya',
-'Peñol',
-'Peque',
-'Pueblorrico',
-'Puerto Berrío',
-'Puerto Nare',
-'Puerto Triunfo',
-'Remedios',
-'Retiro',
-'Rionegro',
-'Sabanalarga',
-'Sabaneta',
-'Salgar',
-'San Andrés',
-'San Carlos',
-'San Francisco',
-'San Pedro De Uraba',
-'San José De La Montaña',
-'San Juan De Uraba',
-'Santa Rosa De Osos',
-'San Pedro',
-'San Jerónimo',
-'San Rafael',
-'San Roque',
-'San Vicente',
-'Santa Bárbara',
-'San Luis',
-'Santafé de Antioquia',
-'Santo Domingo',
-'Santuario',
-'Segovia',
-'Sonsón',
-'Sopetrán',
-'Támesis',
-'Taraza',
-'Tarso',
-'Titirib',
-'Toledo',
-'Turbo',
-'Uramita',
-'Urrao',
-'Valdivia',
-'Valparaíso',
-'Vegachi',
-'Venecia',
-'Vigía Del Fuerte',
-'Yali',
-'Yarumal',
-'Yolombó',
-'Yondó',
-'Zaragoza'
-]
 
 
 #Analyze an list of dictionaries
@@ -120,31 +24,45 @@ treePerMunicipality =[
 municipalities = ['Medellin', 'Bello', 'Itagui', 'Envigado', 'Sabaneta', 'Rionegro', 'La Ceja', 'Girardota', 'Caldas', 'Copacabana', 'Barbosa', 'Others...']
 
 # List of tree types
-tree_types = ['Guayacanes', 'Acacias', 'Cedros', 'Pinos', 'Eucaliptos', 'Robles', 'Palmas', 'Others...']
-
-# Generate 250 random dictionaries
-random_data = []
-for i in range(1, 251):
-    municipality = random.choice(municipalities)
-    tree_type = random.choice(tree_types)
-    amount = random.randint(100, 5000)  # Random amount between 100 and 5000
-    
-    data = {'id': i, 'municipality': municipality, 'treeType': tree_type, 'amount': amount}
-    random_data.append(data)
-
-# Print the generated data
-for item in random_data:
-    print(item)
+tree_types = ['Guayacanes', 'Acacias', 'Cedros', 'Pinos', 'Eucaliptos', 'Robles', 'Palmas', 'Mimosa', 'Madroño', 'Ficus', 'Olivos']
 
 
+records = generateData(2000)
+df = createDataframe(records)
+print(df)
+
+moda_cantidad_arboles = df['cantidad'].mode().values[0]
+print(f"La moda de la cantidad de árboles es: {moda_cantidad_arboles}")
+municipio_mas_comun = df['municipio'].value_counts().idxmax()
+cantidad_repeticiones = df['municipio'].value_counts().max()
+print(f"El municipio más común es '{municipio_mas_comun}' con {cantidad_repeticiones} repeticiones.")
+media_cantidad_arboles = df['cantidad'].mean()
+print(f"La media de la cantidad total de árboles es: {media_cantidad_arboles}")
+mediana_cantidad_arboles = df['cantidad'].median()
+print(f"La mediana de la cantidad de árboles es: {mediana_cantidad_arboles}")
 
 
+# Crear una gráfica de barras para la media, mediana y moda
+plt.figure(figsize=(10, 6))
+
+# Media
+plt.bar('Media', df['cantidad'].mean(), color='blue', label=f'Media: {df["cantidad"].mean()}')
+
+# Mediana
+plt.bar('Mediana', df['cantidad'].median(), color='green', label=f'Mediana: {df["cantidad"].median()}')
+
+# Moda
+plt.bar('Moda', moda_cantidad_arboles, color='red', label=f'Moda: {moda_cantidad_arboles}')
+
+plt.title('Estadísticas de Cantidad de Árboles')
+plt.xlabel('Estadística')
+plt.ylabel('Valor')
+plt.legend()
+
+plt.show()
 
 #Convert lists and list of dictionaries in DataFrames
-df1 = pd.DataFrame(cities)
-df2 = pd.DataFrame(students)
-print(df1)
-print(df2)
+
 
 
 

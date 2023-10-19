@@ -1,0 +1,75 @@
+.head{
+    padding: 0.5rem;
+}
+.navbarContainer {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.sticky-top{
+    margin-left: 1rem;
+}
+
+.logoC{
+    width: 100px;
+    height: 50px;
+}
+.home{
+    margin-left: 20px;
+}
+.video{
+    margin: 0.5rem;
+    padding: 1rem;
+}
+.description{
+    padding: 0.5rem;
+    margin: 1rem;
+}
+.descriptionTittle{
+    text-align: center;
+}
+.card-section {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; 
+    padding: 1rem; 
+    flex-wrap: wrap;
+
+}
+
+.card.cardDescription {
+    width: 30%;
+    background-color: #eeffe6; 
+    padding: 0.5rem; 
+    margin: 1rem;
+    border: 1px solid #ddd; 
+    text-align: center; 
+    box-sizing: border-box; 
+}
+
+
+footer {
+    background-color: #eeffe6; /* Change to your desired background color */
+    color: #000000; /* Text color */
+    padding: 0.5rem; /* Add padding to the entire footer */
+    text-align: center; /* Center the content in the footer */
+}
+
+/* Style for each section */
+.footer-section {
+    width: 20%; /* Each section takes 25% of the width for equal separation */
+    display: inline-block; /* Allows the sections to be displayed horizontally */
+    padding: 10px; /* Add padding to each section for spacing */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+.GitHubLink{
+    text-decoration: none;
+    color: #000000;
+}
+.GitHubLink:hover {
+    text-decoration: underline; 
+}
+
+.footerContainer{
+    margin-top: 1rem;
+}
