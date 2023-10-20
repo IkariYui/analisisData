@@ -61,6 +61,8 @@ plt.legend()
 
 plt.show()
 
+# Guardar la gráfica como un archivo PNG
+plt.savefig('grafica.png')
 #Convert lists and list of dictionaries in DataFrames
 
 

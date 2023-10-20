@@ -5,6 +5,8 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
 .sticky-top{
     margin-left: 1rem;
@@ -12,13 +14,14 @@
 
 .logoC{
     width: 100px;
-    height: 50px;
+    height: 70px;
 }
 .home{
     margin-left: 20px;
 }
 .video{
-    margin: 0.5rem;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
     padding: 1rem;
 }
 .description{
@@ -72,4 +75,8 @@ footer {
 
 .footerContainer{
     margin-top: 1rem;
+}
+
+.bodyContent{
+    font-style: italic;
 }

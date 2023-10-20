@@ -1,3 +1,18 @@
 .menuContainer{
     background-color: #4ffa00;
 }
+
+.h4{
+    transition: 0.5s;
+}
+
+.menu-item h4:hover {
+    background-color: #7f7f7f;
+}
+
+.imgLogo{
+    margin-bottom: 1rem;
+}
+.cardInfo{
+    background-color: #eeffe6;
+}
