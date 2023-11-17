@@ -1,11 +1,12 @@
 import random
 snacks = []
 
-for i in range(10):
+
+for i in range(1000):
     name = random.choice(['Bimbo', 'Sencillo', 'Completo', 'Premium'])
-    drink = random.choice(['Hit', 'Tampico', 'Coca Cola'])
-    cuantity = random.randint(1, 20)
-    snack = [name, drink, cuantity]
+    price = random.randint(5000, 25000)
+    cuantity = random.randint(500, 5000)
+    totalPrice = (price * cuantity)
+    snack = [name, price, cuantity, totalPrice]
     snacks.append(snack)
 
-print (snacks)

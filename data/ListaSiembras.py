@@ -27,7 +27,7 @@ municipalities = ['Carepa',
 'Girardota',
 'Gómez Plata',
 'Granada',
-'Guadalupe'
+'Guadalupe',
 'Guarne',
 'Guatapé',
 'Heliconia',
@@ -102,18 +102,16 @@ municipalities = ['Carepa',
 'Zaragoza'
 ]
 
-def generateData(dataRecords):
-    records = []
 
-    for _ in range (dataRecords):
+records = []
+
+for _ in range (1000):
         municipality = random.choice(municipalities)
         treeType = random.choice(tree_types)
         quantity = random.randint(1, 100)
-        record = {'municipio': municipality, 'tipo de árbol': treeType, 'cantidad': quantity}
+        record = {municipality, treeType, quantity}
         records.append(record)
 
-    return records
-    records = generateData(1000)    
 
 def createDataframe(records):
     df = pd.DataFrame(records)

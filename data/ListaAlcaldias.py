@@ -123,3 +123,10 @@ for _ in range(125):
 
 for item in alcaldias:
     print(item)
+    
+#Municipio, especie, cantidad árboles
+#Municipios con más de 90 árboles
+#Municipios con ceibas
+#Municipios con siembras <10
+
+#Dentro de cultivadores, refrigerios, siembras  secciones para cada filtro    
