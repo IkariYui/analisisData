@@ -105,11 +105,11 @@ municipalities = ['Carepa',
 
 records = []
 
-for _ in range (1000):
+for _ in range (500):
         municipality = random.choice(municipalities)
         treeType = random.choice(tree_types)
         quantity = random.randint(1, 100)
-        record = {municipality, treeType, quantity}
+        record = [municipality, treeType, quantity]
         records.append(record)
 
 
