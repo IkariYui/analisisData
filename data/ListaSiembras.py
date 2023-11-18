@@ -85,7 +85,7 @@ municipalities = ['Carepa',
 'Támesis',
 'Taraza',
 'Tarso',
-'Titirib',
+'Titiribi',
 'Toledo',
 'Turbo',
 'Uramita',
@@ -108,7 +108,7 @@ records = []
 for _ in range (500):
         municipality = random.choice(municipalities)
         treeType = random.choice(tree_types)
-        quantity = random.randint(1, 100)
+        quantity = random.randint(1, 110)
         record = [municipality, treeType, quantity]
         records.append(record)
 

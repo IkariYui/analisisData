@@ -24,8 +24,12 @@ createTable(dataFrameSnacks, 'snacks')
 
 unitPriceFilter = dataFrameSnacks.query("Price<20000")
 print(f"Unit price: {unitPriceFilter}")
+createTable(unitPriceFilter,'unitPriceFilter')
+
 totalPriceFilter = dataFrameSnacks.query("totalPrice <1000000")
 print(f"Total price: {totalPriceFilter}")
+createTable(totalPriceFilter,'totalPriceFilter')
+
 quantityFilter = dataFrameSnacks.query("Cuantity<1000")
 print(f"Cuantity: {quantityFilter}")
-
+createTable(quantityFilter,'quantityFilter')

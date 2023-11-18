@@ -3,7 +3,7 @@ import random
 usuarios = []
 
 for i in range(500):
-    name = random.choice(['Sara', 'Juan', 'Jorge', 'Andrés'])
+    name = random.choice(['Sara', 'Juan', 'Jorge', 'Andres'])
     password = random.choice(['Admin123', 'Arboles000'])
     gender = random.choice(['H', 'M'])
     age = random.randint(18, 62)

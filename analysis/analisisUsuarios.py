@@ -27,9 +27,12 @@ print(f"The filter two is: {filterTwo}")
 
 salaryFilter = dataFrameUsers.query("(Gender=='M') and (Age>40) and (Salary>1160000) and (Salary<2320000)")
 print(f"Salary Filter: {salaryFilter}")
+createTable(salaryFilter, 'salaryFilter')
 
 ageFilter = dataFrameUsers.query('Age<20')
 print(f"The sowers under 20yo are: {ageFilter}")
+createTable(ageFilter, 'ageFilter')
 
 ageAndGenderFilter = dataFrameUsers.query("(Age>50) and (Gender=='H')")
 print(f"Age and Gender Filter: {ageAndGenderFilter}")
+createTable(ageAndGenderFilter, 'ageAndGenderFilter')
